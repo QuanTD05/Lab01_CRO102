@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Button, StyleSheet } from 'react-native';
 import Bai1 from './comps/bai';
 import Bai2 from './comps/bai2';
+import Bai3 from './comps/bai3';
 
 const App = () => {
   const [screen, setScreen] = useState(null);
@@ -23,10 +24,19 @@ const App = () => {
         </View>
       </View>
     );
+    if (screen === 'bai3') return (
+      <View style={styles.screenContainer}>
+        <Bai3 />
+        <View style={styles.backButtonContainer}>
+          <Button title="Quay lại" onPress={() => setScreen(null)} />
+        </View>
+      </View>
+    );
     return (
       <View style={styles.buttonContainer}>
         <Button title="Bài 1" onPress={() => setScreen('bai')} />
         <Button title="Bài 2" onPress={() => setScreen('bai2')} />
+        <Button title="Bài 3" onPress={() => setScreen('bai3')} />
       </View>
     );
   };
